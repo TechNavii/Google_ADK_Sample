@@ -33,10 +33,10 @@ dev = [
 
 # Explicitly tell setuptools where the packages are
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = {"" = "web"}
 
 [tool.setuptools.packages.find]
-where = ["src"]  # Tells setuptools to find packages in src/
+where = ["web"]  # Tells setuptools to find packages in web/
 
 [tool.ruff]
 line-length = 88

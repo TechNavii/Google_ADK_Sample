@@ -7,7 +7,7 @@ This project demonstrates a simple agent built using the Google Agent Developmen
 *   Google ADK agent setup.
 *   Custom tool integration (`brave_search`).
 *   Configuration via environment variables (`.env`).
-*   Basic project structure (`src`, `tests`).
+*   Basic project structure (`web`, `tests`).
 *   Dependency management with `uv`.
 
 ## Setup
@@ -56,10 +56,10 @@ This project demonstrates a simple agent built using the Google Agent Developmen
 Use the ADK CLI to interact with the agent:
 
 ```bash
-adk run src
+adk run web
 ```
 
-This command tells the ADK to look for an agent definition within the `src` directory (it will find `src.agent.root_agent`).
+This command tells the ADK to look for an agent definition within the `web` directory (it will find `web.agent.root_agent`).
 
 You can then type queries like:
 
@@ -83,13 +83,14 @@ pytest
 .
 ├── .env              # Local environment variables (ignored by git)
 ├── .env.example      # Example environment variables
+├── .gitignore        # Files ignored by git
 ├── pyproject.toml    # Project metadata and dependencies (for uv/pip)
 ├── README.md         # This file
-├── src/
-│   ├── __init__.py   # Makes 'src' a Python package
+├── web/
+│   ├── __init__.py   # Makes 'web' a Python package
 │   ├── agent.py      # Defines the ADK agent
 │   └── search_tool.py # Defines the custom Brave Search tool
 └── tests/
     ├── __init__.py   # Makes 'tests' a Python package
-    └── test_search_tool.py # Tests for the search tool
+    └── test_search_tool.py # Tests for the search tool (optional)
 ``` 
