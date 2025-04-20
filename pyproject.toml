@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "google_adk_brave_agent"
+version = "0.1.0"
+description = "A simple Google ADK agent using Brave Search API."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", # Or choose another license
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "google-adk",
+    "python-dotenv",
+    "requests",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-mock",
+    "requests-mock", # For mocking HTTP requests in tests
+    "ruff", # Linter/formatter
+]
+
+[project.urls]
+"Homepage" = "http://placeholder.url"  # Add URL if you plan to host it
+"Bug Tracker" = "http://placeholder.url/issues" # Add URL if you plan to host it
+
+# Explicitly tell setuptools where the packages are
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]  # Tells setuptools to find packages in src/
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "D"] # Enable common checks + docstrings
+ignore = ["D100", "D104"] # Ignore missing module docstrings if desired
+
+[tool.ruff.format]
+quote-style = "double" 
